@@ -1,0 +1,19 @@
+version: '2.1'
+services:
+
+    webhooker:
+        build:
+            context: ./services/webhooker
+            dockerfile: Dockerfile.dev
+        networks:
+            - development
+        ports:
+            - ${HUMBLE_PORT:-8080}:8080
+        environment:
+            NODE_ENV: ${NODE_ENV:-development}
+            LOG_LEVEL: ${LOG_LEVEL:-info}
+        working_dir: /usr/src/app
+        entrypoint: [ "yarn", "start" ]
+    
+networks:
+    development:

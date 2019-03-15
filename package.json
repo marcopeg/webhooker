@@ -1,0 +1,32 @@
+{
+    "name": "webhooker",
+    "version": "0.0.0",
+    "description": "Filters and forward GitHub webhooks, you know, for deployment automation and simplification :-)",
+    "scripts": {
+      "book:serve": "node_modules/.bin/gitbook serve",
+      "book:build": "node_modules/.bin/gitbook build . docs",
+      "book:install": "node_modules/.bin/gitbook install"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/marcopeg/webhooker.git"
+    },
+    "author": "Marco Pegoraro",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/marcopeg/webhooker/issues"
+    },
+    "homepage": "https://marcopeg.github.io/webhooker/",
+    "keywords": [
+      "github",
+      "hooks",
+      "deployment",
+      "automation",
+      "pipeline",
+      "triggers"
+    ],
+    "devDependencies": {
+      "gitbook-cli": "^2.3.2"
+    }
+  }
+  

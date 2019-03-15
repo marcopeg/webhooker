@@ -1,0 +1,60 @@
+{
+  "name": "webhooker",
+  "version": "0.0.0",
+  "description": "Filters and forward GitHub webhooks, you know, for deployment automation and simplification :-)",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development ./node_modules/.bin/nodemon --watch ssr -e js index.dev.js",
+    "start:prod": "NODE_ENV=production BABEL_ENV=node npm run clean && npm run build && node index",
+    "clean": "rm -rf ./build-ssr",
+    "build": "NODE_ENV=production BABEL_ENV=node ./node_modules/.bin/babel ssr --out-dir ./build-ssr",
+    "test": "./node_modules/.bin/react-scripts test",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/polyfill": "^7.0.0",
+    "@marcopeg/hooks": "^0.2.2",
+    "@marcopeg/utils": "^1.12.0",
+    "compression": "^1.7.3",
+    "es6-promise": "^4.2.5",
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.3",
+    "helmet": "^3.15.1",
+    "jsonwebtoken": "^8.5.0",
+    "node-env-file": "^0.1.8",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "eslint-config-react": "^1.1.7",
+    "nodemon": "^1.18.9"
+  },
+  "keywords": [
+    "github",
+    "hooks",
+    "deployment",
+    "automation",
+    "pipeline",
+    "triggers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcopeg/webhooker.git"
+  },
+  "author": "Marco Pegoraro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcopeg/webhooker/issues"
+  },
+  "homepage": "https://marcopeg.github.io/webhooker/"
+}
